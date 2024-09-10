@@ -12,11 +12,11 @@ async function run(filepath, outputDir) {
         const reader = await SvfReader.FromFileSystem(filepath);
         const scene = await reader.read();
         let writer;
-        writer = new GltfWriter({ deduplicate: false, skipUnusedUvs: false, center: true, log: console.log });
+        writer = new GltfWriter({ ignoreMeshGeometry: true, deduplicate: false, skipUnusedUvs: false, center: true, log: console.log });
         await writer.write(scene, path.join(outputDir, 'gltf-raw'));
-        writer = new GltfWriter({ deduplicate: true, skipUnusedUvs: true, center: true, log: console.log });
+        writer = new GltfWriter({ ignoreMeshGeometry: true, deduplicate: true, skipUnusedUvs: true, center: true, log: console.log });
         await writer.write(scene, path.join(outputDir, 'gltf-dedup'));
-    } catch(err) {
+    } catch (err) {
         console.error(err);
         process.exit(1);
     }
