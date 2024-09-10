@@ -349,8 +349,7 @@ export class Writer {
     outputUvs: boolean
   ): gltf.Node {
     let node: gltf.Node = {
-      name: fragment.dbid.toString(),
-      objectId: fragment.objectId?.toString(),
+      name: fragment.objectId?.toString() || fragment.dbid.toString(),
     };
 
     if (fragment.transform) {
