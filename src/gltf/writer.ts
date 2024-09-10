@@ -350,7 +350,7 @@ export class Writer {
   ): gltf.Node {
     let node: gltf.Node = {
       name: fragment.dbid.toString(),
-      objectId: fragment.objectId,
+      objectId: fragment.objectId?.toString(),
     };
 
     if (fragment.transform) {

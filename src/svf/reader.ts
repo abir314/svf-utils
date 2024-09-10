@@ -44,7 +44,7 @@ export class Scene implements IMF.IScene {
 
   getNode(id: number): IMF.Node {
     const frag = this.svf.fragments[id];
-    const objectId = this.svf.properties.getProperties(frag.dbID)["__id__"];
+    const objectId = this.svf.properties._ids[frag.dbID];
     const node: IMF.IObjectNode = {
       kind: IMF.NodeKind.Object,
       dbid: frag.dbID,

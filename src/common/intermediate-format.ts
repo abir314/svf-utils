@@ -78,7 +78,7 @@ export interface IObjectNode {
   transform?: Transform;
   geometry: GeometryID;
   material: MaterialID;
-  objectId?: string;
+  objectId?: number;
 }
 
 export interface ICameraNode {

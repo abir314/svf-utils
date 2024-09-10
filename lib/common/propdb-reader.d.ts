@@ -4,7 +4,7 @@
  * stored in various 'objects_*.json.gz' assets in an SVF.
  */
 export declare class PropDbReader {
-    protected _ids: number[];
+    _ids: number[];
     protected _offsets: number[];
     protected _avs: number[];
     protected _attrs: any[];
